@@ -1,9 +1,11 @@
 package seedu.address.logic.parser;
 
-import seedu.address.logic.commands.*;
+import java.util.ArrayList;
+
+import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
-import java.util.ArrayList;
+
 
 //@@author jasmoon
 
@@ -12,10 +14,7 @@ import java.util.ArrayList;
  */
 public class HelpCommandParser implements Parser<HelpCommand> {
 
-
     public final ArrayList<String> availableCommands;
-    public static String commandRequest;
-    public static final String MESSAGE_INVALID_HELP_COMMAND = "Help for command is unknown or not available";
 
     /**
      * HelpCommandParser constructor - creates an ArrayList which contains all commands open to the help function.
@@ -37,15 +36,25 @@ public class HelpCommandParser implements Parser<HelpCommand> {
 
     public HelpCommand parse(String args) throws ParseException {
 
-        commandRequest = args.trim();
+        String commandRequest = args.trim();
         if (commandRequest.length() == 0) {
             return new HelpCommand();
-        }else {
-            if(availableCommands.contains(commandRequest))
+        } else {
+            if (availableCommands.contains(commandRequest))
                 return new HelpCommand(args);
-            else
-                throw new ParseException(MESSAGE_INVALID_HELP_COMMAND);
+            else {
+                throw new ParseException(formInvalidMessage(commandRequest));
+            }
         }
+    }
+
+    /**
+     *
+     * @param commandRequest
+     * @return String message for invalid command request.
+     */
+    private String formInvalidMessage(String commandRequest)    {
+        return "Help for '" + commandRequest + "' is unknown or not available";
     }
 }
 

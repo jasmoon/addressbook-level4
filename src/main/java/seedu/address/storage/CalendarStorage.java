@@ -4,8 +4,9 @@ import java.io.IOException;
 import java.util.Optional;
 
 import seedu.address.commons.exceptions.DataConversionException;
-import seedu.address.model.ReadOnlyCalendar;
 import seedu.address.model.Calendar;
+import seedu.address.model.ReadOnlyCalendar;
+
 
 /**
  * Represents a storage for {@link Calendar}.

@@ -24,7 +24,7 @@ public class Activity {
     /**
      * Every field must be present and not null.
      */
-    public Activity(Name name, DateTime dateTime,Remark remark, Set<Tag> tags) {
+    public Activity(Name name, DateTime dateTime, Remark remark, Set<Tag> tags) {
         requireAllNonNull(name, dateTime, remark, tags);
         this.name = name;
         this.dateTime = dateTime;

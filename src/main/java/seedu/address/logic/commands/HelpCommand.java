@@ -4,10 +4,11 @@ import seedu.address.commons.core.EventsCenter;
 import seedu.address.commons.events.ui.ShowHelpRequestEvent;
 
 /**
- * Format full help instructions for every command for display.
+ * Format full help instructions for every command for display or command requested
  */
 public class HelpCommand extends Command {
 
+    public static String commandToHelp = null;
     public static final String COMMAND_WORD = "help";
     public static final String COMMAND_ALIAS = "man";
 
@@ -15,7 +16,7 @@ public class HelpCommand extends Command {
             + "Example: " + COMMAND_WORD;
 
     public static final String SHOWING_HELP_MESSAGE = "Opened help window.";
-    public static String commandToHelp = null;
+
 
     //@@author jasmoon
     public HelpCommand()    {
@@ -27,28 +28,29 @@ public class HelpCommand extends Command {
 
     @Override
     public CommandResult execute() {
-        if(commandToHelp==null)   {
+        if (commandToHelp == null)   {
             EventsCenter.getInstance().post(new ShowHelpRequestEvent());
             return new CommandResult(SHOWING_HELP_MESSAGE);
-        }else   {
+        } else   {
             switch(commandToHelp) {
-                case AddCommand.COMMAND_WORD:
-                    return new CommandResult(AddCommand.MESSAGE_USAGE);
 
-                case EditCommand.COMMAND_WORD:
-                    return new CommandResult(EditCommand.MESSAGE_USAGE);
+            case AddCommand.COMMAND_WORD:
+                return new CommandResult(AddCommand.MESSAGE_USAGE);
 
-                case SelectCommand.COMMAND_WORD:
-                    return new CommandResult(SelectCommand.MESSAGE_USAGE);
+            case EditCommand.COMMAND_WORD:
+                return new CommandResult(EditCommand.MESSAGE_USAGE);
 
-                case DeleteCommand.COMMAND_WORD:
-                    return new CommandResult(DeleteCommand.MESSAGE_USAGE);
+            case SelectCommand.COMMAND_WORD:
+                return new CommandResult(SelectCommand.MESSAGE_USAGE);
 
-                case FindCommand.COMMAND_WORD:
-                    return new CommandResult(FindCommand.MESSAGE_USAGE);
+            case DeleteCommand.COMMAND_WORD:
+                return new CommandResult(DeleteCommand.MESSAGE_USAGE);
 
-                default:
-                    return new CommandResult(MESSAGE_USAGE);
+            case FindCommand.COMMAND_WORD:
+                return new CommandResult(FindCommand.MESSAGE_USAGE);
+
+            default:
+                return new CommandResult(MESSAGE_USAGE);
             }
         }
     }

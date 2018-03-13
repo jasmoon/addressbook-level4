@@ -5,8 +5,9 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_ACTIVITY;
 
 import seedu.address.logic.commands.exceptions.CommandException;
-import seedu.address.model.ReadOnlyCalendar;
 import seedu.address.model.Calendar;
+import seedu.address.model.ReadOnlyCalendar;
+
 
 /**
  * Represents a command which can be undone and redone.

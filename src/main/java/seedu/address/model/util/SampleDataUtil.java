@@ -5,7 +5,10 @@ import java.util.Set;
 
 import seedu.address.model.Calendar;
 import seedu.address.model.ReadOnlyCalendar;
-import seedu.address.model.activity.*;
+import seedu.address.model.activity.Activity;
+import seedu.address.model.activity.DateTime;
+import seedu.address.model.activity.Name;
+import seedu.address.model.activity.Remark;
 import seedu.address.model.activity.exceptions.DuplicateActivityException;
 import seedu.address.model.tag.Tag;
 

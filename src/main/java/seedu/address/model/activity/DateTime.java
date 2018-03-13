@@ -1,6 +1,5 @@
 package seedu.address.model.activity;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,13 +15,13 @@ public class DateTime {
 
     public static final String DATE_FORMAT = "MM/dd/yyyy hh:mm:ss";
     public static final String MESSAGE_DATETIME_CONSTRAINTS =
-            "Date and  Time numbers should be a date and should be in the format of " +
-            DATE_FORMAT;
+            "Date and  Time numbers should be a date and should be in the format of "
+            + DATE_FORMAT;
     // TODO : FIND A REGET TO VALIDATE THE DATE AND TIME. 
-    public static final String DATETIME_VALIDATION_REGEX =".*";
-
+    public static final String DATETIME_VALIDATION_REGEX = ".*";
     private final String value;
     private Date date;
+
     /**
      * Constructs a {@code DateTime}.
      *
