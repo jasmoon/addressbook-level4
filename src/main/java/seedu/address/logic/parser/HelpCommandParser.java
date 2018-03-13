@@ -42,9 +42,9 @@ public class HelpCommandParser implements Parser<HelpCommand> {
         } else {
             if (availableCommands.contains(commandRequest))
                 return new HelpCommand(args);
-            else {
+
+            else
                 throw new ParseException(formInvalidMessage(commandRequest));
-            }
         }
     }
 

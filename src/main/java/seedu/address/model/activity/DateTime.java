@@ -1,11 +1,13 @@
 package seedu.address.model.activity;
 
+import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.AppUtil.checkArgument;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
+
 
 /**
  * Represents a Activity's phone number in the address book.
@@ -15,9 +17,9 @@ public class DateTime {
 
     public static final String DATE_FORMAT = "MM/dd/yyyy hh:mm:ss";
     public static final String MESSAGE_DATETIME_CONSTRAINTS =
-            "Date and  Time numbers should be a date and should be in the format of "
+            "Date and Time numbers should be a date and should be in the format of "
             + DATE_FORMAT;
-    // TODO : FIND A REGET TO VALIDATE THE DATE AND TIME. 
+    // TODO : FIND A REGET TO VALIDATE THE DATE AND TIME.
     public static final String DATETIME_VALIDATION_REGEX = ".*";
     private final String value;
     private Date date;

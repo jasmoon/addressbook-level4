@@ -8,7 +8,7 @@ import seedu.address.commons.events.ui.ShowHelpRequestEvent;
  */
 public class HelpCommand extends Command {
 
-    public static String commandToHelp = null;
+    private static String commandRequest = null;
     public static final String COMMAND_WORD = "help";
     public static final String COMMAND_ALIAS = "man";
 
@@ -23,16 +23,16 @@ public class HelpCommand extends Command {
     }
 
     public HelpCommand(String args) {
-        commandToHelp = args.trim();
+        commandRequest = args.trim();
     }
 
     @Override
     public CommandResult execute() {
-        if (commandToHelp == null)   {
+        if (commandRequest == null)   {
             EventsCenter.getInstance().post(new ShowHelpRequestEvent());
             return new CommandResult(SHOWING_HELP_MESSAGE);
         } else   {
-            switch(commandToHelp) {
+            switch(commandRequest) {
 
             case AddCommand.COMMAND_WORD:
                 return new CommandResult(AddCommand.MESSAGE_USAGE);
@@ -53,5 +53,9 @@ public class HelpCommand extends Command {
                 return new CommandResult(MESSAGE_USAGE);
             }
         }
+    }
+
+    public static String getCommandRequest() {
+        return commandRequest;
     }
 }
