@@ -56,13 +56,21 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 * Parameters can be in any order e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 ====
 
-=== Viewing help : `help`
+=== Viewing help : `help` or `man`
 
-Format: `help`
+Shows the help menu or help for the `COMMAND_WORD` requested.
+
+Format: `help`, `help COMMAND_WORD`, `man` or `man COMMAND_WORD`
+
+Examples:
+
+* `help`
+
+* `man add`
 
 === Adding a activity: `add`
 
-Adds a activity to the remark book +
+Adds a activity to the address book +
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]...`
 
 [TIP]
