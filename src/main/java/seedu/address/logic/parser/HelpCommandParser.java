@@ -40,11 +40,11 @@ public class HelpCommandParser implements Parser<HelpCommand> {
         if (commandRequest.length() == 0) {
             return new HelpCommand();
         } else {
-            if (availableCommands.contains(commandRequest))
+            if (availableCommands.contains(commandRequest)) {
                 return new HelpCommand(args);
-
-            else
+            } else {
                 throw new ParseException(formInvalidMessage(commandRequest));
+            }
         }
     }
 
