@@ -73,7 +73,7 @@ public class DeleteCommandSystemTest extends RemarkBookSystemTest {
         command = DeleteCommand.COMMAND_WORD + " " + invalidIndex;
         assertCommandFailure(command, MESSAGE_INVALID_ACTIVITY_DISPLAYED_INDEX);
 
-        /* --------------------- Performing delete operation while a activity card is selected ------------------------ */
+        /* ----------------- Performing delete operation while a activity card is selected -------------------- */
 
         /* Case: delete the selected activity -> activity list panel selects the activity before the deleted activity */
         showAllPersons();

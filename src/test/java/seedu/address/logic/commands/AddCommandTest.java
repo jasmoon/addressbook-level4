@@ -18,12 +18,13 @@ import javafx.collections.ObservableList;
 import seedu.address.logic.CommandHistory;
 import seedu.address.logic.UndoRedoStack;
 import seedu.address.logic.commands.exceptions.CommandException;
-import seedu.address.model.ReadOnlyCalendar;
-import seedu.address.model.Calendar;
-import seedu.address.model.Model;
 import seedu.address.model.activity.Activity;
 import seedu.address.model.activity.exceptions.DuplicateActivityException;
 import seedu.address.model.activity.exceptions.ActivityNotFoundException;
+import seedu.address.model.Calendar;
+import seedu.address.model.Model;
+import seedu.address.model.ReadOnlyCalendar;
+
 import seedu.address.testutil.PersonBuilder;
 
 public class AddCommandTest {

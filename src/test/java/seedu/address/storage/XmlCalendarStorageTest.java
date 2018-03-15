@@ -16,8 +16,8 @@ import org.junit.rules.TemporaryFolder;
 
 import seedu.address.commons.exceptions.DataConversionException;
 import seedu.address.commons.util.FileUtil;
-import seedu.address.model.ReadOnlyCalendar;
 import seedu.address.model.Calendar;
+import seedu.address.model.ReadOnlyCalendar;
 
 public class XmlCalendarStorageTest {
     private static final String TEST_DATA_FOLDER = FileUtil.getPath("./src/test/data/XmlCalendarStorageTest/");

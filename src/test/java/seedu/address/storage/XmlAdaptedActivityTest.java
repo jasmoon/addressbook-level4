@@ -11,9 +11,10 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 
 import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.model.activity.Remark;
-import seedu.address.model.activity.Name;
 import seedu.address.model.activity.DateTime;
+import seedu.address.model.activity.Name;
+import seedu.address.model.activity.Remark;
+
 import seedu.address.testutil.Assert;
 
 public class XmlAdaptedActivityTest {

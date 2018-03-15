@@ -6,7 +6,6 @@ import static seedu.address.logic.commands.CommandTestUtil.ADDRESS_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.EMAIL_DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.EMAIL_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_ADDRESS_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.INVALID_EMAIL_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_PHONE_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_TAG_DESC;
@@ -18,8 +17,6 @@ import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_FRIEND;
 import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_HUSBAND;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_AMY;
@@ -42,7 +39,10 @@ import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.commands.RedoCommand;
 import seedu.address.logic.commands.UndoCommand;
 import seedu.address.model.Model;
-import seedu.address.model.activity.*;
+import seedu.address.model.activity.Activity;
+import seedu.address.model.activity.DateTime;
+import seedu.address.model.activity.Name;
+import seedu.address.model.activity.Remark;
 import seedu.address.model.activity.exceptions.DuplicateActivityException;
 import seedu.address.model.tag.Tag;
 import seedu.address.testutil.PersonBuilder;
@@ -54,10 +54,10 @@ public class AddCommandSystemTest extends RemarkBookSystemTest {
     public void add() throws Exception {
         Model model = getModel();
 
-        /* ------------------------ Perform add operations on the shown unfiltered list ----------------------------- */
+        /* -------------------- Perform add operations on the shown unfiltered list ------------------------- */
 
-        /* Case: add a activity without tags to a non-empty address book, command with leading spaces and trailing spaces
-         * -> added
+        /* Case: add a activity without tags to a non-empty address book, command with leading spaces and
+         * trailing spaces -> added
          */
         Activity toAdd = AMY;
         String command = "   " + AddCommand.COMMAND_WORD + "  " + NAME_DESC_AMY + "  " + PHONE_DESC_AMY + " "
@@ -116,19 +116,20 @@ public class AddCommandSystemTest extends RemarkBookSystemTest {
         /* Case: add a activity, missing tags -> added */
         assertCommandSuccess(HOON);
 
-        /* -------------------------- Perform add operation on the shown filtered list ------------------------------ */
+        /* ---------------------- Perform add operation on the shown filtered list -------------------------- */
 
         /* Case: filters the activity list before adding -> added */
         showPersonsWithName(KEYWORD_MATCHING_MEIER);
         assertCommandSuccess(IDA);
 
-        /* ------------------------ Perform add operation while a activity card is selected --------------------------- */
+        /* ------------------- Perform add operation while a activity card is selected ------------------- */
 
-        /* Case: selects first card in the activity list, add a activity -> added, card selection remains unchanged */
+        /* Case: selects first card in the activity list, add a activity -> added,
+         * card selection remains unchanged */
         selectPerson(Index.fromOneBased(1));
         assertCommandSuccess(CARL);
 
-        /* ----------------------------------- Perform invalid add operations --------------------------------------- */
+        /* ------------------------------- Perform invalid add operations ----------------------------------- */
 
         /* Case: add a duplicate activity -> rejected */
         command = PersonUtil.getAddCommand(HOON);
