@@ -116,8 +116,8 @@ public class Calendar implements ReadOnlyCalendar {
 
     /**
      *  Updates the master tag list to include tags in {@code activity} that are not in the list.
-     *  @return a copy of this {@code activity} such that every tag in this activity points to a Tag object in the master
-     *  list.
+     *  @return a copy of this {@code activity} such that every tag in this activity points to
+     *  a Tag object in the master list.
      */
     private Activity syncWithMasterTagList(Activity activity) {
         final UniqueTagList personTags = new UniqueTagList(activity.getTags());
