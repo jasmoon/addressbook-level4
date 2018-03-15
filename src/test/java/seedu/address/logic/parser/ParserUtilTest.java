@@ -19,8 +19,8 @@ import org.junit.rules.ExpectedException;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.activity.DateTime;
-import seedu.address.model.activity.Remark;
 import seedu.address.model.activity.Name;
+import seedu.address.model.activity.Remark;
 import seedu.address.model.tag.Tag;
 import seedu.address.testutil.Assert;
 
