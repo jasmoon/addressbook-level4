@@ -21,4 +21,17 @@ public class HelpCommandTest {
         assertTrue(eventsCollectorRule.eventsCollector.getMostRecent() instanceof ShowHelpRequestEvent);
         assertTrue(eventsCollectorRule.eventsCollector.getSize() == 1);
     }
+
+    @Test
+    public void execute_helpForTask_success() {
+        CommandResult result = new HelpCommand("task").execute();
+        assertEquals(TaskCommand.MESSAGE_USAGE, result.feedbackToUser);
+    }
+
+    @Test
+    public void execute_helpForDelete_success()    {
+        CommandResult result = new HelpCommand("delete").execute();
+        assertEquals(DeleteCommand.MESSAGE_USAGE, result.feedbackToUser);
+    }
+
 }

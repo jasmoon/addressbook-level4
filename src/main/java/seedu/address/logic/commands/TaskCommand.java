@@ -27,7 +27,7 @@ public class TaskCommand extends UndoableCommand {
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_NAME + "Software Engineering Milestone 1 "
             + PREFIX_DATE_TIME + "01/08/2018 17:00 "
-            + PREFIX_REMARK + "Enhance major component"
+            + PREFIX_REMARK + "Enhance major component "
             + PREFIX_TAG + "CS2103T";
 
     public static final String MESSAGE_SUCCESS = "New task added: %1$s";

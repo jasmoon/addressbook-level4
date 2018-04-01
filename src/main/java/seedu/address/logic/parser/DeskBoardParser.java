@@ -6,12 +6,7 @@ import static seedu.address.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import seedu.address.logic.commands.Command;
-import seedu.address.logic.commands.CompleteCommand;
-import seedu.address.logic.commands.DeleteCommand;
-import seedu.address.logic.commands.EventCommand;
-import seedu.address.logic.commands.HelpCommand;
-import seedu.address.logic.commands.TaskCommand;
+import seedu.address.logic.commands.*;
 //import seedu.address.logic.commands.ClearCommand;
 //import seedu.address.logic.commands.DeleteCommand;
 //import seedu.address.logic.commands.EditCommand;
@@ -82,8 +77,11 @@ public class DeskBoardParser {
         //case FindCommand.COMMAND_WORD:
             //return new FindCommandParser().parse(arguments);
 
-        //case ListCommand.COMMAND_WORD:
-            //return new ListCommand();
+        case ListCommand.COMMAND_WORD:
+            return new ListCommandParser().parse(arguments);
+
+        case ListCommand.COMMAND_ALIAS:
+            return new ListCommandParser().parse(arguments);
 
         //case HistoryCommand.COMMAND_WORD:
             //return new HistoryCommand();

@@ -67,11 +67,11 @@
 }
 
 #taskListView .list-cell:filled:even {
-    -fx-background: linear-gradient(to right, #e8e8e8 0%, #e8e8e8 82.5%, #a0f0ff 82.5%, #a0f0ff 100%);
+    -fx-background: linear-gradient(to right, #e8e8e8 0%, #e8e8e8 82.5%, #b2eaff 82.5%, #b2eaff 100%);
 }
 
 #taskListView .list-cell:filled:odd   {
-    -fx-background: linear-gradient(to right, #d1d1d1 0%, #d1d1d1 82.5%, #b2d3ff 82.5%, #b2d3ff 100%);
+    -fx-background: linear-gradient(to right, #d1d1d1 0%, #d1d1d1 82.5%, #8ccef2 82.5%, #8ccef2 100%);
 }
 
 #eventListView .list-cell:filled:even {

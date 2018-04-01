@@ -2,6 +2,7 @@ package seedu.address.logic.parser;
 
 import java.util.ArrayList;
 
+import seedu.address.commons.core.Messages;
 import seedu.address.logic.commands.CompleteCommand;
 import seedu.address.logic.commands.DeleteCommand;
 import seedu.address.logic.commands.EditCommand;
@@ -51,18 +52,8 @@ public class HelpCommandParser implements Parser<HelpCommand> {
             if (availableCommands.contains(commandRequest)) {
                 return new HelpCommand(args);
             } else {
-                throw new ParseException(formInvalidMessage(commandRequest));
+                throw new ParseException(String.format(Messages.MESSAGE_INVALID_HELP_REQUEST, commandRequest));
             }
         }
     }
-
-    /**
-     *
-     * @param commandRequest
-     * @return String message for invalid command request.
-     */
-    private String formInvalidMessage(String commandRequest)    {
-        return "Help for '" + commandRequest + "' is unknown or not available.";
-    }
 }
-

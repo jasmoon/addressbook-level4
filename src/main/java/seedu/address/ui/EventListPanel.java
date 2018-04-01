@@ -33,6 +33,8 @@ public class EventListPanel extends UiPart<Region> {
         super(FXML);
         setConnections(eventList);
         registerAsAnEventHandler(this);
+        //maybe do not need this
+        //eventListView.managedProperty().bind(eventListView.visibleProperty());
     }
 
     private void setConnections(ObservableList<Activity> eventList) {
@@ -87,4 +89,12 @@ public class EventListPanel extends UiPart<Region> {
         }
     }
 
+    //@@author jasmoon
+    /**
+     * Getter method for eventListView
+     * @return eventListView
+     */
+    public ListView<EventCard> getEventListView()   {
+        return eventListView;
+    }
 }

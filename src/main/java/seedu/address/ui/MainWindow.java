@@ -15,8 +15,7 @@ import javafx.stage.Stage;
 import seedu.address.commons.core.Config;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
-import seedu.address.commons.events.ui.ExitAppRequestEvent;
-import seedu.address.commons.events.ui.ShowHelpRequestEvent;
+import seedu.address.commons.events.ui.*;
 import seedu.address.logic.Logic;
 import seedu.address.model.UserPrefs;
 
@@ -189,5 +188,27 @@ public class MainWindow extends UiPart<Stage> {
     private void handleShowHelpEvent(ShowHelpRequestEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         handleHelp();
+    }
+
+    //@@author jasmoon
+    @Subscribe
+    private void handleShowActivityRequestEvent(ShowActivityRequestEvent event)    {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        taskListPanel.getTaskListView().setVisible(true);
+        eventListPanel.getEventListView().setVisible(true);
+    }
+
+    @Subscribe
+    private void handleShowEventOnlyRequestEvent(ShowEventOnlyRequestEvent event)   {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        taskListPanel.getTaskListView().setVisible(false);
+        eventListPanel.getEventListView().setVisible(true);
+    }
+
+    @Subscribe
+    private void handleShowTaskOnlyRequestEvent(ShowTaskOnlyRequestEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        taskListPanel.getTaskListView().setVisible(true);
+        eventListPanel.getEventListView().setVisible(false);
     }
 }
